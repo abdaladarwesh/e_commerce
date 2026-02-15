@@ -1,0 +1,46 @@
+
+<main>
+    <img src="/phone.png" alt="">
+    <form [formGroup]="form">
+        <div class="form-top">
+            <h1>Log in to Exclusive</h1>
+            <p>Enter your details below</p>
+            <div class="inputs">
+                <input type="email" formControlName="email" placeholder="Email or Phone Number">
+                @if (form.controls.email.invalid && form.controls.email.touched ) {
+                    @if (form.controls.email.hasError("required")) {
+                        <div class="error" >
+                            <lucide-icon [img]="CircleIcon" size="20" class="menu-icon"></lucide-icon>
+                            <p>You must enter your email</p>
+                        </div>
+                    }
+                    @else {
+                        <div class="error" >
+                            <lucide-icon [img]="CircleIcon" size="20" class="menu-icon"></lucide-icon>
+                            <p>Please enter a vaild email name@example.com</p>
+                        </div>
+                    }
+                }
+                <input type="password" formControlName="password" placeholder="Password">
+                @if (form.controls.password.invalid && form.controls.password.touched ) {
+                    @if (form.controls.password.hasError("required")) {
+                        <div class="error" >
+                            <lucide-icon [img]="CircleIcon" size="20" class="menu-icon"></lucide-icon>
+                            <p>You must enter your password</p>
+                        </div>
+                    }
+                    @else {
+                        <div class="error" >
+                            <lucide-icon [img]="CircleIcon" size="20" class="menu-icon"></lucide-icon>
+                            <p>The password must be 8 charachters long at least</p>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="form-bottom">
+            <button [ngClass]="{'disabled': form.invalid,'enabled': form.valid}">Login</button>
+            <p>forget password?</p>
+        </div>
+    </form>
+</main>

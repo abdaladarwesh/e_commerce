@@ -1,0 +1,82 @@
+<nav>
+  <h1>Exclusive</h1>
+  
+  <!-- Desktop Navigation -->
+  <div class="desktop-nav">
+    <ul>
+      <li>Home</li>
+      <li>Contact</li>
+      <li>About</li>
+      <li>Sign up</li>
+    </ul>
+    <div class="utils">
+      <div class="search">
+        <input type="text" placeholder="What are you looking for?" />
+        <lucide-icon [img]="SearchIcon" class="search-icon" size="20"></lucide-icon>
+      </div>
+      <lucide-icon [img]="HeartIcon"></lucide-icon>
+      <lucide-icon [img]="ShoppingCart" class="cart"></lucide-icon>
+      <div class="user" (click)="handleProfileClick()">
+        <lucide-icon [img]="UserIcon" size="15" class="user-icon"></lucide-icon>
+        @if (isOpened()) {
+          <div class="menu">
+            <div class="menu-item">
+              <lucide-icon [img]="UserIcon" size="15" class="menu-icon"></lucide-icon>
+              <p>Manage My Account</p>
+            </div>
+            <div class="menu-item">
+              <lucide-icon [img]="HandBag" size="15" class="menu-icon"></lucide-icon>
+              <p>My Order</p>
+            </div>
+            <div class="menu-item">
+              <lucide-icon [img]="CircleIcon" size="15" class="menu-icon"></lucide-icon>
+              <p>My Cancellations</p>
+            </div>
+            <div class="menu-item">
+              <lucide-icon [img]="StarIcon" size="15" class="menu-icon"></lucide-icon>
+              <p>My Reviews</p>
+            </div>
+            <div class="menu-item">
+              <lucide-icon [img]="LogOutIcon" size="15" class="menu-icon"></lucide-icon>
+              <p>Logout</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Hamburger Menu -->
+  <div class="mobile-nav">
+    <lucide-icon [img]="MenuIcon" class="menu-toggle" (click)="toggleMenu()" size="24"></lucide-icon>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (menuOpen()) {
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <h2>Menu</h2>
+        <lucide-icon [img]="CloseIcon" class="close-icon" (click)="toggleMenu()" size="24"></lucide-icon>
+      </div>
+      <ul class="mobile-menu-list">
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About</li>
+        <li>Sign up</li>
+      </ul>
+      <div class="mobile-utils">
+        <div class="search">
+          <input type="text" placeholder="What are you looking for?" />
+          <lucide-icon [img]="SearchIcon" class="search-icon" size="20"></lucide-icon>
+        </div>
+        <div class="mobile-icons">
+          <lucide-icon [img]="HeartIcon"></lucide-icon>
+          <lucide-icon [img]="ShoppingCart" class="cart"></lucide-icon>
+          <div class="user" (click)="handleProfileClick()">
+            <lucide-icon [img]="UserIcon" size="15" class="user-icon"></lucide-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</nav>
