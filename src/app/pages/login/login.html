@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="form-bottom">
-            <button [ngClass]="{'disabled': form.invalid,'enabled': form.valid}">Login</button>
+            <button [ngClass]="{'disabled': form.invalid,'enabled': form.valid}" (click)="handleButtonClick()">Login</button>
             <p>forget password?</p>
         </div>
     </form>

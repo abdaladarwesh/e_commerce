@@ -1,0 +1,7 @@
+.line{
+    width: calc(100vw - 100px);
+    background-color: rgba(128, 128, 128, 0.53);
+    height: 2px;
+    margin: 3rem 0px;
+}
+

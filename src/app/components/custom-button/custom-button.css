@@ -1,0 +1,21 @@
+button{
+    color: white;
+    background-color: red;
+    padding: 0.7rem 3rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(145, 0, 0);
+}
+
+a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}

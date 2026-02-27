@@ -1,7 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CircleX, LucideAngularModule } from "lucide-angular";
+import { Router, RouterLink } from "@angular/router";
 
 
 interface LoginForm{
@@ -16,6 +17,9 @@ interface LoginForm{
   styleUrl: './login.css',
 })
 export class Login {
+
+  router = inject(Router);
+
   readonly CircleIcon = CircleX; 
   protected form = new FormGroup<LoginForm>({
     email: new FormControl<string>('', {
@@ -33,4 +37,9 @@ export class Login {
       ]
     })
   })
+
+  handleButtonClick(){
+    if (this.form.valid)
+    this.router.navigate(['/'])
+  }
 }

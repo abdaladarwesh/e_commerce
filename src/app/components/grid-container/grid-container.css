@@ -4,8 +4,11 @@ section{
     justify-content: center;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
+    gap: 15px;
+    -webkit-user-drag: none;
+    user-select: none;
 }
+
 
 @media (max-width: 767px) {
     section{

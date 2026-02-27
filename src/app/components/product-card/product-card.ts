@@ -11,7 +11,8 @@ export class ProductCard {
   readonly heart = Heart;
   readonly eye = Eye;
 
-   title = input.required<string>();
+  title = input.required<string>();
   price = input.required<number>();
   imageUrl = input.required<string>();
+  tooltip = input.required<string>();
 }

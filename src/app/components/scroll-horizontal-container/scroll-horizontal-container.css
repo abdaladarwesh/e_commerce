@@ -1,0 +1,17 @@
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding: 1rem;
+    gap: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+    user-select: none;
+    overflow-y: hidden;
+    
+}
+
+main::-webkit-scrollbar{
+    display: none;
+}

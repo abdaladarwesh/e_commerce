@@ -1,0 +1,14 @@
+<app-section-title> Categories </app-section-title>
+<h1>Browse By Category</h1>
+<div class="cards">
+  @for (icon of icons; track $index) {
+    <div (click)="selectedIcon.set($index)">
+      <app-category-card
+        [icon]="icon.icon"
+        [title]="icon.title"
+
+        [isSelected]="$index === selectedIcon()"
+      ></app-category-card>
+    </div>
+  }
+</div>

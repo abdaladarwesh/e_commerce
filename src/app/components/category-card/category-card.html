@@ -1,0 +1,6 @@
+<div class="card" [ngClass]="{'selected' : isSelected()}">
+        <div class="column">
+            <lucide-icon [class.white]="isSelected()" [img]="icon()" size="50" class="menu-icon"></lucide-icon>
+            <p [class.white]="isSelected()">{{title()}}</p>
+        </div>
+</div>

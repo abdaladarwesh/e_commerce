@@ -1,5 +1,5 @@
 .card {
-  width: 30vh;
+  width: 15vw;
   height: 40vh;
   /* background-color: red; */
   position: relative;
@@ -82,9 +82,23 @@ img {
 .option{
     background-color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.menu-icon{
+  width: 20px;
+  height: 20px;
+  /* background-color: #ff0000; */
+  fill: red;
+  stroke: red;
+}
+
+@media (max-width: 1130px) {
+  .card{
+    width: min(50vw, 250px);
+  }
 }

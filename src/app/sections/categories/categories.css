@@ -1,0 +1,28 @@
+h1{
+    padding: 1rem;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+    user-select: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative;
+}
+
+.cards::-webkit-scrollbar{
+    width: 0;
+}
+
+.selected{
+    background-color: red;
+    color: white;
+}
+
+@media (max-width: 1051px) {
+    .cards{
+        justify-content: start;
+    }
+}
