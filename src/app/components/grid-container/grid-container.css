@@ -1,0 +1,26 @@
+section{
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+@media (max-width: 767px) {
+    section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 1345px) and (min-width: 767px) {
+    section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 523px) {
+    section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

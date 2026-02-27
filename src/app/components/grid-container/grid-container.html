@@ -1,0 +1,9 @@
+<section>
+    @for (product of productsInput(); track $index) {
+        <app-product-card 
+        [imageUrl]="product.images[0]"
+        [title]="product.title"
+        [price]="product.price"
+        ></app-product-card>
+    }
+</section>

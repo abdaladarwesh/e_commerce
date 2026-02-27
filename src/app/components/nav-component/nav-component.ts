@@ -12,10 +12,11 @@ import {
   User,
   X,
 } from 'lucide-angular';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-nav-component',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, RouterLink],
   templateUrl: './nav-component.html',
   styleUrl: './nav-component.css',
 })

@@ -1,1 +1,8 @@
-<p>home works!</p>
+<app-grid-container [productsInput]="products()"></app-grid-container>
+@if (loading()) {
+    <div class="loading">
+        <div class="loader">
+        </div>
+        <h1>Loading</h1>
+    </div>
+}

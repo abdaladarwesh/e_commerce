@@ -1,13 +1,13 @@
 <nav>
   <h1>Exclusive</h1>
   
-  <!-- Desktop Navigation -->
+
   <div class="desktop-nav">
     <ul>
-      <li>Home</li>
+      <li routerLink="/">Home</li>
       <li>Contact</li>
       <li>About</li>
-      <li>Sign up</li>
+      <li routerLink="login">Log in</li>
     </ul>
     <div class="utils">
       <div class="search">
@@ -46,12 +46,10 @@
     </div>
   </div>
 
-  <!-- Mobile Hamburger Menu -->
   <div class="mobile-nav">
     <lucide-icon [img]="MenuIcon" class="menu-toggle" (click)="toggleMenu()" size="24"></lucide-icon>
   </div>
 
-  <!-- Mobile Menu -->
   @if (menuOpen()) {
     <div class="mobile-menu">
       <div class="mobile-menu-header">
@@ -59,10 +57,10 @@
         <lucide-icon [img]="CloseIcon" class="close-icon" (click)="toggleMenu()" size="24"></lucide-icon>
       </div>
       <ul class="mobile-menu-list">
-        <li>Home</li>
+        <li routerLink="/">Home</li>
         <li>Contact</li>
         <li>About</li>
-        <li>Sign up</li>
+        <li routerLink="login">Login</li>
       </ul>
       <div class="mobile-utils">
         <div class="search">
