@@ -3,14 +3,14 @@
         <img [src]="img()" alt="">
         <p [title]="title()">{{title()}}</p>
     </div>
-    <p class="price" style="width: 10%;">
+    <p class="price" >
         {{price()}}
     </p>
-    <div style="width: 25%;">
+    <div class="input-con">
         <input [ngModel]="amount()" (ngModelChange)="updateStoreQuantity($event)" type="number" min="1" class="counter"/>
     </div>
 
-    <p class="sub-total" style="width: 25%;">
+    <p class="sub-total">
         {{price() * amount()}}
     </p>
 </div>

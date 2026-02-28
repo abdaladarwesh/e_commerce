@@ -33,8 +33,48 @@ input{
     content: "$";
 }
 
+.price{
+    width: 10%;
+}
+
+.input-con{
+    width: 25%;
+}
+.sub-total{
+    width: 25%;
+}
 p{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+    .cart-card{
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        height: 200px;
+        gap: 10px;
+    }
+
+    .price , .input-con, .sub-total{
+        width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+
+    .product{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .price::before{
+        content: "Price: $";
+    }
+
+    .sub-total::before{
+        content: "Total: $";
+    }
+
 }
