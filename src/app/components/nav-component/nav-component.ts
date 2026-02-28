@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   CircleX,
   Handbag,
@@ -12,7 +12,7 @@ import {
   User,
   X,
 } from 'lucide-angular';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-nav-component',
@@ -21,6 +21,12 @@ import { RouterLink } from "@angular/router";
   styleUrl: './nav-component.css',
 })
 export class NavComponent {
+
+  router = inject(Router);
+
+
+  isOpened = signal(false);
+  menuOpen = signal(false);
   handleProfileClick() {
     this.isOpened.update(v => !v)
   }
@@ -29,8 +35,10 @@ export class NavComponent {
     this.menuOpen.update(v => !v);
   }
 
-  isOpened = signal(false);
-  menuOpen = signal(false);
+  handleMobileNavClick(path: string){
+    this.menuOpen.set(false);
+    this.router.navigate([path]);
+  }
 
   readonly SearchIcon = Search;
   readonly HeartIcon = Heart;

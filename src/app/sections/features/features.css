@@ -1,0 +1,8 @@
+.circles{
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px,5vw,8rem);
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+

@@ -57,10 +57,10 @@
         <lucide-icon [img]="CloseIcon" class="close-icon" (click)="toggleMenu()" size="24"></lucide-icon>
       </div>
       <ul class="mobile-menu-list">
-        <li routerLink="/">Home</li>
+        <li (click)="handleMobileNavClick('/')">Home</li>
         <li>Contact</li>
         <li>About</li>
-        <li routerLink="login">Login</li>
+        <li (click)="handleMobileNavClick('/login')">Login</li>
       </ul>
       <div class="mobile-utils">
         <div class="search">
@@ -72,6 +72,30 @@
           <lucide-icon [img]="ShoppingCart" class="cart"></lucide-icon>
           <div class="user" (click)="handleProfileClick()">
             <lucide-icon [img]="UserIcon" size="15" class="user-icon"></lucide-icon>
+            @if (isOpened()) {
+              <div class="menu">
+                <div class="menu-item">
+                  <lucide-icon [img]="UserIcon" size="15" class="menu-icon"></lucide-icon>
+                  <p>Manage My Account</p>
+                </div>
+                <div class="menu-item">
+                  <lucide-icon [img]="HandBag" size="15" class="menu-icon"></lucide-icon>
+                  <p>My Order</p>
+                </div>
+                <div class="menu-item">
+                  <lucide-icon [img]="CircleIcon" size="15" class="menu-icon"></lucide-icon>
+                  <p>My Cancellations</p>
+                </div>
+                <div class="menu-item">
+                  <lucide-icon [img]="StarIcon" size="15" class="menu-icon"></lucide-icon>
+                  <p>My Reviews</p>
+                </div>
+                <div class="menu-item">
+                  <lucide-icon [img]="LogOutIcon" size="15" class="menu-icon"></lucide-icon>
+                  <p>Logout</p>
+                </div>
+              </div>
+            }
           </div>
         </div>
       </div>

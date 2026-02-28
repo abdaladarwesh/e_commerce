@@ -20,4 +20,10 @@ export const routes: Routes = [
       return import('../app/pages/products/products').then((c) => c.Products);
     },
   },
+  {
+    path: "**",
+    loadComponent: () => {
+      return import("../app/components/not-found/not-found").then(c => c.NotFound);
+    }
+  }
 ];
