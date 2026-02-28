@@ -13,6 +13,7 @@ import {
   X,
 } from 'lucide-angular';
 import { Router, RouterLink } from "@angular/router";
+import { ProductsStore } from '../../service/products-store';
 
 @Component({
   selector: 'app-nav-component',
@@ -23,6 +24,9 @@ import { Router, RouterLink } from "@angular/router";
 export class NavComponent {
 
   router = inject(Router);
+  productStore = inject(ProductsStore);
+
+  
 
 
   isOpened = signal(false);

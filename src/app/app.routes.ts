@@ -21,9 +21,15 @@ export const routes: Routes = [
     },
   },
   {
+    path: "cart",
+    loadComponent: () => {
+      return import("./pages/cart/cart").then((c) => c.Cart)
+    }
+  },
+  {
     path: "**",
     loadComponent: () => {
       return import("../app/components/not-found/not-found").then(c => c.NotFound);
     }
-  }
+  },
 ];

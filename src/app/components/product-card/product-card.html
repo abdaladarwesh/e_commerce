@@ -2,12 +2,16 @@
   <div class="img-container">
     <img
     draggable="false"
-      src="{{imageUrl()}}"
+      src="{{product().images[0]}}"
       alt=""
     />
+    <div class="add-cart" (click)="handleAddToCart()">
+      <lucide-icon strokeWidth="1" [img]="cart" size="20" class="menu-icon"></lucide-icon>
+      <p>Add to cart</p>
+    </div>
   </div>
-  <p class="title" [title]="tooltip()">{{title()}}</p>
-  <div class="price">{{price()}}</div>
+  <p class="title" [title]="product().title">{{product().title.substring(0, 48).concat('...')}}</p>
+  <div class="price">{{product().price}}</div>
   <div class="stars">
     <div class="star"></div>
     <div class="star"></div>

@@ -1,0 +1,19 @@
+<main>
+  <div class="cart-header">
+    <p style="width: 40%;">Product</p>
+    <p style="width: 10%;">Price</p>
+    <p style="width: 25%;">Quantity</p>
+    <p style="width: 25%;">Subtotal</p>
+  </div>
+  @for (item of productStore.getCartItems(); track item.product.id) {
+    <app-cart-card
+        [id]="item.product.id"
+        [img]="item.product.images[0]"
+        [title]="item.product.title"
+        [price]="item.product.price"
+        [amount]="item.quantity"
+    ></app-cart-card>
+  }
+
+  <app-total-cart [total]="productStore.totalPrice()"></app-total-cart>
+</main>

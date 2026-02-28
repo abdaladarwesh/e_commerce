@@ -1,10 +1,7 @@
 <app-grid-container>
     @for (product of products(); track $index) {
         <app-product-card
-        [tooltip]="product.title"
-        [title]="product.title.substring(0, 27)+'...'"
-        [imageUrl]="product.images[0]"
-        [price]="product.price"
+        [product]="product"
         ></app-product-card>
     }
 </app-grid-container>

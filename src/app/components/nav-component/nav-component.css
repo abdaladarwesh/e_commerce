@@ -92,13 +92,18 @@ li:hover::after {
 }
 
 .cart {
-    position: relative;
     cursor: pointer;
 }
 
-.cart::after {
-    content: "2";
-    font-size: 0.6rem;
+.cart-con{
+    position: relative;
+    z-index: 2;
+}
+
+.circle {
+    content: "";
+    font-size: 0.8rem;
+    font-weight: 600;
     color: black;
     display: flex;
     justify-content: center;

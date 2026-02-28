@@ -6,3 +6,8 @@
     margin-bottom: 5rem;
 }
 
+@media (max-width: 767px) {
+    .circles{
+        flex-direction: column;
+    }
+}

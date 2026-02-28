@@ -47,17 +47,12 @@
 <app-scroll-horizontal-container>
   @for (product of products(); track $index) {
     <app-product-card
-      [tooltip]="product.title"
-      [imageUrl]="product.images[0]"
-      [title]="product.title"
-      [price]="product.price"
+d     [product]="product"
     ></app-product-card>
   }
 </app-scroll-horizontal-container>
 <app-center>
-    <app-custom-button style="padding: 1rem;" link="/products">
-        View All Products
-    </app-custom-button>
+  <app-custom-button style="padding: 1rem" link="/products"> View All Products </app-custom-button>
 </app-center>
 @if (loading()) {
   <app-loading></app-loading>

@@ -15,7 +15,10 @@
         <lucide-icon [img]="SearchIcon" class="search-icon" size="20"></lucide-icon>
       </div>
       <lucide-icon [img]="HeartIcon"></lucide-icon>
-      <lucide-icon [img]="ShoppingCart" class="cart"></lucide-icon>
+      <div class="cart-con">
+        <div class="circle">{{productStore.getTotalProducts()}}</div>
+        <lucide-icon [img]="ShoppingCart" class="cart" routerLink="/cart"></lucide-icon>
+      </div>
       <div class="user" (click)="handleProfileClick()">
         <lucide-icon [img]="UserIcon" size="15" class="user-icon"></lucide-icon>
         @if (isOpened()) {
@@ -69,7 +72,7 @@
         </div>
         <div class="mobile-icons">
           <lucide-icon [img]="HeartIcon"></lucide-icon>
-          <lucide-icon [img]="ShoppingCart" class="cart"></lucide-icon>
+          <lucide-icon [img]="ShoppingCart" class="cart" routerLink="/cart"></lucide-icon>
           <div class="user" (click)="handleProfileClick()">
             <lucide-icon [img]="UserIcon" size="15" class="user-icon"></lucide-icon>
             @if (isOpened()) {

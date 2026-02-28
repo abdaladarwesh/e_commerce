@@ -1,0 +1,27 @@
+<section>
+    <div class="coupon">
+        <input type="text" placeholder="Coupon Code">
+        <app-custom-button>Apply Coupon</app-custom-button>
+    </div>
+    <div class="total">
+        <p class="title">Cart Total</p>
+        <div class="field">
+            <p>Subtotal:</p>
+            <p class="price">{{total()}}</p>
+        </div>
+        <div class="line"></div>
+        <div class="field">
+            <p>Shipping:</p>
+            <p>free</p>
+        </div>
+        <div class="line"></div>
+        <div class="field">
+            <p>Total:</p>
+            <p class="price">{{total()}}</p>
+        </div>
+        <div class="line"></div>
+        <app-center>
+            <app-custom-button>Procees to checkout</app-custom-button>
+        </app-center>
+    </div>
+</section>

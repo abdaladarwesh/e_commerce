@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
-import { Eye, Heart, LucideAngularModule } from 'lucide-angular';
+import { Component, inject, input } from '@angular/core';
+import { Eye, Heart, LucideAngularModule, ShoppingCart } from 'lucide-angular';
+import { ProductsStore } from '../../service/products-store';
 
 @Component({
   selector: 'app-product-card',
@@ -10,9 +11,13 @@ import { Eye, Heart, LucideAngularModule } from 'lucide-angular';
 export class ProductCard {
   readonly heart = Heart;
   readonly eye = Eye;
-
-  title = input.required<string>();
-  price = input.required<number>();
-  imageUrl = input.required<string>();
-  tooltip = input.required<string>();
+  readonly cart = ShoppingCart;
+  protected productStore = inject(ProductsStore);
+  
+  handleAddToCart() {
+    this.productStore.addProduct(this.product());
+    console.log(this.productStore.getCartItems());
+  }
+  
+  product = input.required<product>();
 }

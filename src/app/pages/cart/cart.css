@@ -1,0 +1,10 @@
+main{
+    padding: 3rem clamp(1px, 4vw, 3rem);
+}
+
+.cart-header{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px -10px rgba(128, 128, 128, 0.389);
+}
