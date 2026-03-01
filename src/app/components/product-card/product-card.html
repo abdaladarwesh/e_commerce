@@ -10,7 +10,7 @@
       <p>Add to cart</p>
     </div>
   </div>
-  <p class="title" [title]="product().title">{{product().title.substring(0, 48).concat('...')}}</p>
+  <p class="title" [routerLink]="['/product', product().id]" [title]="product().title">{{product().title.substring(0, 48).concat('...')}}</p>
   <div class="price">{{product().price}}</div>
   <div class="stars">
     <div class="star"></div>

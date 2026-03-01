@@ -1,10 +1,11 @@
 import { Component, inject, input } from '@angular/core';
 import { Eye, Heart, LucideAngularModule, ShoppingCart } from 'lucide-angular';
 import { ProductsStore } from '../../service/products-store';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-product-card',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, RouterLink],
   templateUrl: './product-card.html',
   styleUrl: './product-card.css',
 })
@@ -13,6 +14,7 @@ export class ProductCard {
   readonly eye = Eye;
   readonly cart = ShoppingCart;
   protected productStore = inject(ProductsStore);
+
   
   handleAddToCart() {
     this.productStore.addProduct(this.product());

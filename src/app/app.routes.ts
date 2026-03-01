@@ -27,6 +27,24 @@ export const routes: Routes = [
     }
   },
   {
+    path: "product/:id",
+    loadComponent: () => {
+      return import("./pages/product-details/product-details").then(c => c.ProductDetails);
+    }
+  },
+  {
+    path: "contact",
+    loadComponent: () => {
+      return import("./pages/contact/contact").then(c => c.Contact);
+    }
+  },
+  {
+    path: "about",
+    loadComponent: () => {
+      return import("./pages/about/about").then(c => c.About);
+    }
+  },
+  {
     path: "**",
     loadComponent: () => {
       return import("../app/components/not-found/not-found").then(c => c.NotFound);

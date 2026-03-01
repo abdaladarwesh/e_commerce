@@ -1,0 +1,122 @@
+@if (isLoading()) {
+    <app-loading></app-loading>
+} @else if (product()) {
+    <div class="breadcrumb">
+        Account / Gaming / <span>{{product()?.title}}</span>
+    </div>
+
+    <div class="product-container">
+        <div class="image-gallery">
+            <div class="thumbnails">
+                @for (img of product()?.images; track img) {
+                    <div class="thumb" [class.active]="activeImage() === img" (click)="changeImage(img)">
+                        <img [src]="img" draggable="false" alt="">
+                    </div>
+                }
+            </div>
+            <div class="main-image">
+                <img [src]="activeImage()" draggable="false" alt="">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="title">{{product()?.title}}</h1>
+            
+            <div class="rating-stock">
+                <div class="stars">
+                    @for (s of starsRating; track s) {
+                        <div class="star-rating">
+                            <lucide-icon [img]="star" size="16" class="star-icon"></lucide-icon>
+                        </div>
+                    }
+                    <span class="reviews-count">(150 Reviews)</span>
+                </div>
+                <div class="separator">|</div>
+                <div class="stock-status">In Stock</div>
+            </div>
+
+            <div class="price">${{product()?.price}}.00</div>
+
+            <p class="description">{{product()?.description}}</p>
+
+            <div class="divider"></div>
+
+            <div class="options-container">
+                <div class="colors">
+                    <span class="option-label">Colours:</span>
+                    <div class="color-options">
+                        @for (c of colors; track c) {
+                            <div class="color-circle" 
+                                 [style.backgroundColor]="c" 
+                                 [class.selected]="selectedColor() === c"
+                                 (click)="selectColor(c)">
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="sizes">
+                    <span class="option-label">Size:</span>
+                    <div class="size-options">
+                        @for (s of sizes; track s) {
+                            <button class="size-btn" 
+                                    [class.selected]="selectedSize() === s"
+                                    (click)="selectSize(s)">
+                                {{s}}
+                            </button>
+                        }
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" (click)="decreaseQuantity()">
+                            <lucide-icon [img]="minus" size="16"></lucide-icon>
+                        </button>
+                        <span class="qty">{{quantity()}}</span>
+                        <button class="qty-btn" (click)="increaseQuantity()">
+                            <lucide-icon [img]="plus" size="16"></lucide-icon>
+                        </button>
+                    </div>
+                    
+                    <button class="buy-btn" (click)="addToCart()">Buy Now</button>
+                    
+                    <button class="fav-btn">
+                        <lucide-icon [img]="heart" size="24"></lucide-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="delivery-info">
+                <div class="info-row">
+                    <lucide-icon [img]="truck" size="40" class="info-icon"></lucide-icon>
+                    <div class="info-text">
+                        <h3>Free Delivery</h3>
+                        <p><u>Enter your postal code for Delivery Availability</u></p>
+                    </div>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-row">
+                    <lucide-icon [img]="refresh" size="40" class="info-icon"></lucide-icon>
+                    <div class="info-text">
+                        <h3>Return Delivery</h3>
+                        <p>Free 30 Days Delivery Returns. <u>Details</u></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-section">
+        <div class="section-title">
+            <div class="red-block"></div>
+            <span>Related Item</span>
+        </div>
+        
+        <div class="related-products">
+            @for (prod of relatedProducts(); track prod.id) {
+                <app-product-card [product]="prod"></app-product-card>
+            }
+        </div>
+    </div>
+}

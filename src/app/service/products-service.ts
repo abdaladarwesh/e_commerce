@@ -8,7 +8,11 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
   private http = inject(HttpClient);
-  getProducts(): Observable<product[]>{
+  getProducts(){
     return this.http.get<product[]>("https://api.escuelajs.co/api/v1/products");
+  }
+
+  getProduct(id:number){
+    return this.http.get<product>(`https://api.escuelajs.co/api/v1/products/${id}`)
   }
 }
